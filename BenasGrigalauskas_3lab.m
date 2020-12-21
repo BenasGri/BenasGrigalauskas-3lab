@@ -6,7 +6,7 @@ clc;
 x = 0.1:1/22:1;
 
 %Norimo atsako funkcija
-y = (1 + 0.6*sin(2*pi*x/0.7)) + 0.3*sin(2*pi*x))/2;
+y = (1 + 0.6*sin(2*pi*x/0.7)) + (0.3*sin(2*pi*x))/2;
 
 %Centru reiksmes
 c1 = 0.2;
@@ -43,6 +43,16 @@ for n = 1:10000
     end
 end
 
+%Rezultatu atvaizdavimas
+figure(1);
+hold on
+plot(x,y)
+plot(x,yout)
+hold off;
+xlabel('x');
+ylabel('y');
+title('Gauti rezultatai');
+legend('Tikroji funkcija','Gauta funkcija naudojant SBF tinkla');
 
 function [F] = gauss(x, c, r) 
     F = exp(-(x-c)^2/(2*r^2));
