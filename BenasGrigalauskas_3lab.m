@@ -17,7 +17,7 @@ r1 = 0.4;
 r2 = 0.6;
 
 %Isejimo parametrai
-w0 = rand(1);
+b = rand(1);
 w1 = rand(1);
 w2 = rand(1);
 
@@ -33,10 +33,16 @@ for n = 1:10000
         f1 = gauss(x(k), c1, r1);   %Spindulio tipo funkcija 1
         f2 = gauss(x(k), c1, r1);   %Spindulio tipo funkcija 2
         
-        yout = f1*w1 + f2*w2 + w0;  %Ieskomas rezultatas
-        err = y(k) - yout;          %Skaiciuojama klaida
+        yout(k) = f1*w1 + f2*w2 + b;  %Ieskomas rezultatas
+        err = y(k) - yout(k);          %Skaiciuojama klaida
+                
+        %Svoriu atnaujinimas
+        w1 = w1 + eta*err*f1;
+        w2 = w2 + eta*err*f2;
+        b = b + eta*err;
     end
 end
+
 
 function [F] = gauss(x, c, r) 
     F = exp(-(x-c)^2/(2*r^2));
