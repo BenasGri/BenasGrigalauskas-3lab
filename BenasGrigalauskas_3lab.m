@@ -16,7 +16,20 @@ c2 = 0.8;
 r1 = 0.4;
 r2 = 0.6;
 
+%Isejimo parametrai
+w0 = rand(1);
+w1 = rand(1);
+w2 = rand(1);
+
+%Iejimo vektoriaus ilgis
+xl = length(x);
+
+for n = 1:10000
+    for k = 1:xl
+        
+    end
+end
 
 function [F] = gauss(x, c, r) 
     F = exp(-(x-c)^2/(2*r^2));
-end;
+end
