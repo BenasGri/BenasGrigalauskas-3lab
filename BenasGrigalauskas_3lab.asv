@@ -1,0 +1,6 @@
+clear all;
+close all;
+clc;
+
+x = 0.1:1/22:1;     %Iejimo vektorius
+y = (1 + 0.6*sin(2*pi*x/0.7)) + 0.3*sin(2*pi*x))/2;     %Norimo atsako funkcija
