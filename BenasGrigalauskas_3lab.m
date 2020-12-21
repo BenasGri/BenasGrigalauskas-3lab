@@ -24,9 +24,11 @@ w2 = rand(1);
 %Iejimo vektoriaus ilgis
 xl = length(x);
 
+%Mokymosi ciklas
 for n = 1:10000
     for k = 1:xl
-        
+        f1 = gauss(x(k), c1, r1);   %Spindulio tipo funkcija 1
+        f2 = gauss(x(k), c1, r1);   %Spindulio tipo funkcija 2
     end
 end
 
